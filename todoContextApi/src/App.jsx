@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { TodoProvider } from "./context/TodoContext";
+import { TodoForm } from "./components";
+import { TodoItem } from "./components";
 function App() {
   const [todos,setTodos]=useState([]);
   const addTodo=(todo)=>{
-    setTodos((prev)=>[{id:Date.now, ...todo}, ...prev]);
+    setTodos((prev)=>[{id:Date.now(), ...todo}, ...prev]);
   
   }
   const updateTodo=(id,todo)=>{
@@ -15,6 +17,22 @@ function App() {
     setTodos((prev)=>prev.filter((prevTodo)=>
     prevTodo.id!=id))
   }
+
+  const toggleComplete=(id)=>{
+    setTodos((prev)=>prev.map((todo)=>
+    todo.id===id?{...todo,completed:!todo.completed}:todo))
+  }
+
+  useEffect(()=>{
+    const storedTodos=JSON.parse(localStorage.getItem('todos'));
+    if(storedTodos && storedTodos.length>0)
+        setTodos(storedTodos)
+  },[])
+
+  useEffect(()=>{
+    localStorage.setItem('todos',JSON.stringify(todos))
+  },[todos])
+
   return (
     <TodoProvider value={{todos, addTodo, updateTodo, deleteTodo, toggleComplete}}>
       <div className="bg-[#172842] min-h-screen py-8">
