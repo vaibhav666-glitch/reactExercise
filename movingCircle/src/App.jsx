@@ -16,8 +16,8 @@ function App() {
       <div
         className="w-10 h-10 bg-blue-500 rounded-full fixed "
         style={{
-          bottom: movement.y , // Center the circle
-          right: movement.x , // Center the circle
+          top: movement.y , // Center the circle
+          left: movement.x , // Center the circle
         }}
         ></div>
       </div>

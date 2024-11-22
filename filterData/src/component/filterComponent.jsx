@@ -5,7 +5,7 @@ const dataArray = [
   { fruit: 'apple', color: 'red', taste: 'sweet', size: 'small' },
   { fruit: 'apple', color: 'yellow', taste: 'sweet', size: 'medium' },
   { fruit: 'orange', color: 'orange', taste: 'citrus', size: 'medium' },
-  { fruit: 'orange', color: 'yellow', taste: 'tropical', size: 'large' },
+  { fruit: 'guava', color: 'yellow', taste: 'tropical', size: 'large' },
   { fruit: 'grapes', color: 'green', taste: 'sweet', size: 'small' },
   { fruit: 'watermelon', color: 'green', taste: 'juicy', size: 'large' }
 ];
@@ -19,26 +19,26 @@ const FilterComponent = () => {
 
   useEffect(() => {
     // Dynamically initialize inputValues and suggestions based on dataArray keys
-    if (dataArray.length > 0) {
-      const keys = Object.keys(dataArray[0]);
-      //console.log("I ma keys"+keys);
-      let fruit=new Object;
-      let value=[];
-      for(let i=0;i<dataArray.length;i++)
-      {
+     if (dataArray.length > 0) {
+       const keys = Object.keys(dataArray[0]);
+    //   //console.log("I ma keys"+keys);
+    //   let fruit=new Object;
+    //   let value=[];
+    //   for(let i=0;i<dataArray.length;i++)
+    //   {
        
-        if(!fruit.key.includes(dataArray[i].fruit))
-        {
-          fruit.key=dataArray[i].fruit;
-          value.push(new Array.set(dataArray[i].fruit));
-          //fruit.value=Array.set(dataArray[i]);
-        }
-         else{
-          fruit.getKey(dataArray[i].fruit).value=value.push(new Array.set(dataArray[i]))
-         }
+    //     if(!fruit.key.includes(dataArray[i].fruit))
+    //     {
+    //       fruit.key=dataArray[i].fruit;
+    //       value.push(new Array.set(dataArray[i].fruit));
+    //       //fruit.value=Array.set(dataArray[i]);
+    //     }
+    //      else{
+    //       fruit.getKey(dataArray[i].fruit).value=value.push(new Array.set(dataArray[i]))
+    //      }
         
-      }
-     // console.log(fruit);
+    //   }
+    //  // console.log(fruit);
       
       
       
