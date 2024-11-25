@@ -1,3 +1,5 @@
+import AddTodo from "./component/AddTodo"
+import Todos from "./component/Todo"
 
 function App() {
   
@@ -5,6 +7,8 @@ function App() {
   return (
     <>
     <div className="bg-blue-500">Hellw</div>
+    <AddTodo/>
+    <Todos/>
     </>
   )
 }
